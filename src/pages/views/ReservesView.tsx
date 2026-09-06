@@ -29,7 +29,7 @@ export function ReservesView() {
           </h2>
           <p className="text-xs text-apex-muted">Partition specialized cash blocks for capital expenditures</p>
         </div>
-        <button onClick={() => setCreating(true)} className="btn border border-apex-accentAmber/40 text-apex-accentAmber hover:bg-apex-accentAmber/10 border-t">
+        <button onClick={() => setCreating(true)} className="btn border border-apex-accentAmber/40 text-apex-accentAmber hover:bg-apex-accentAmber/10">
           <Plus className="h-4 w-4" />
           Create Reserve
         </button>
