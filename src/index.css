@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-apex-black text-zinc-100 font-sans antialiased;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
+
+::selection {
+  background: #00f0ff;
+  color: #000;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  header,
+  footer,
+  input,
+  select,
+  button {
+    display: none !important;
+  }
+  .fixed {
+    position: static !important;
+    inset: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+  .glass-panel {
+    background: #fff !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+  }
+  [class*='text-zinc-'] {
+    color: #000 !important;
+  }
+  [class*='text-apex-accent'] {
+    color: #000 !important;
+  }
+  [class*='border-zinc-'] {
+    border-color: #ccc !important;
+  }
+  [class*='bg-zinc-'] {
+    background: #fff !important;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-zinc-900/70 backdrop-blur-xl border border-white/5 rounded-xl;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .input {
+    @apply w-full bg-[#0c0c0e] border border-zinc-800 rounded-lg px-3 py-2.5 text-sm text-white placeholder-zinc-700 transition-all focus:outline-none focus:border-apex-accentBlue focus:ring-2 focus:ring-apex-accentBlue/20;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs font-mono font-bold uppercase tracking-wider transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-apex-black disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .label {
+    @apply block text-[10px] font-mono tracking-wider uppercase text-apex-muted mb-1.5;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider;
+  }
+}
